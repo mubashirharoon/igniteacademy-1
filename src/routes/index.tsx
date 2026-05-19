@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import { IgniteCore } from "@/components/IgniteCore";
 import { Particles } from "@/components/Particles";
 import { Reveal } from "@/components/Reveal";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
@@ -81,6 +82,7 @@ function Home() {
     <div className="min-h-screen text-white overflow-x-hidden">
       <Toaster theme="dark" position="top-right" />
       <Navbar />
+      <WhatsAppFab />
 
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16">
