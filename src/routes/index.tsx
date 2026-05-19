@@ -10,6 +10,11 @@ import { Particles } from "@/components/Particles";
 import { Reveal } from "@/components/Reveal";
 import { ConsultForm } from "@/components/ConsultForm";
 import { Toaster } from "@/components/ui/sonner";
+import yasirImg from "@/assets/faculty/yasir.png";
+import fahadImg from "@/assets/faculty/fahad.png";
+import raheelImg from "@/assets/faculty/raheel.png";
+import mubashirImg from "@/assets/faculty/mubashir.png";
+import haroonImg from "@/assets/faculty/haroon.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,9 +55,9 @@ const subjects = [
 ];
 
 const teachers = [
-  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Clear logic, programming fundamentals, theory understanding and exam-focused preparation.", initial: "F" },
-  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Step-by-step accounting methods, problem-solving accuracy and past paper confidence.", initial: "Y" },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Business concepts, case study application, structured answers and exam technique.", initial: "R" },
+  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Clear logic, programming fundamentals, theory understanding and exam-focused preparation.", photo: fahadImg },
+  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Step-by-step accounting methods, problem-solving accuracy and past paper confidence.", photo: yasirImg },
+  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Business concepts, case study application, structured answers and exam technique.", photo: raheelImg },
 ];
 
 const whyCards = [
@@ -215,20 +220,21 @@ function Home() {
                 style={{ background: "#E85D10" }} />
               <div className="relative grid md:grid-cols-[auto_1fr] gap-10 items-center">
                 <div className="relative w-64 h-64 mx-auto">
-                  {/* 30+ glowing monument */}
                   <div className="absolute inset-0 rounded-full border border-[#E85D10]/40 animate-spin-slow" />
                   <div className="absolute inset-4 rounded-full border border-[#E85D10]/30 animate-spin-slower" style={{ animationDirection: "reverse" }} />
-                  <div className="absolute inset-8 rounded-full border border-white/10 animate-spin-slow" />
                   <div className="absolute inset-0 animate-spin-slow">
                     <div className="absolute left-1/2 -top-2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#ff8a3d]"
                       style={{ boxShadow: "0 0 16px #E85D10" }} />
                   </div>
-                  <div className="absolute inset-12 rounded-full flex items-center justify-center"
-                    style={{ background: "radial-gradient(circle at 30% 30%, #1a1a1a, #050505)", boxShadow: "inset 0 0 40px rgba(232,93,16,0.3), 0 0 60px rgba(232,93,16,0.4)" }}>
-                    <div className="text-center">
-                      <div className="text-6xl font-bold ignite-text leading-none">30+</div>
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-[#B8B8B8] mt-2">Years</div>
-                    </div>
+                  <div className="absolute inset-6 rounded-full overflow-hidden"
+                    style={{ background: "linear-gradient(135deg, #1a1a1a, #050505)", boxShadow: "inset 0 0 40px rgba(232,93,16,0.3), 0 0 60px rgba(232,93,16,0.4)" }}>
+                    <img src={haroonImg} alt="Sir Haroon — Senior Faculty, Ignite Academy"
+                      className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full glass flex items-baseline gap-1.5"
+                    style={{ border: "1px solid rgba(232,93,16,0.4)" }}>
+                    <span className="text-lg font-bold ignite-text leading-none">30+</span>
+                    <span className="text-[9px] uppercase tracking-[0.2em] text-[#B8B8B8]">Years</span>
                   </div>
                 </div>
                 <div>
@@ -256,10 +262,10 @@ function Home() {
               <div className="absolute -left-20 -bottom-20 w-72 h-72 rounded-full blur-3xl opacity-25"
                 style={{ background: "#E85D10" }} />
               <div className="relative grid md:grid-cols-[auto_1fr] gap-8 items-center">
-                <div className="w-40 h-40 mx-auto rounded-2xl flex items-center justify-center text-5xl font-bold ignite-text relative overflow-hidden"
+                <div className="w-40 h-40 mx-auto rounded-2xl relative overflow-hidden"
                   style={{ background: "linear-gradient(135deg, #1a1a1a, #050505)", border: "1px solid rgba(232,93,16,0.3)" }}>
-                  <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 30% 30%, rgba(232,93,16,0.25), transparent 60%)" }} />
-                  <span className="relative">M</span>
+                  <img src={mubashirImg} alt="Sir Mubashir — Founder, Ignite Academy"
+                    className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div>
                   <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium"
@@ -289,9 +295,10 @@ function Home() {
               <Reveal key={t.name} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 h-full hover-lift relative overflow-hidden group">
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold ignite-text relative"
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden relative shrink-0"
                       style={{ background: "linear-gradient(135deg, #1a1a1a, #050505)", border: "1px solid rgba(232,93,16,0.25)" }}>
-                      {t.initial}
+                      <img src={t.photo} alt={`${t.name} — ${t.subject} teacher at Ignite Academy`}
+                        className="w-full h-full object-cover" loading="lazy" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold">{t.name}</h3>
