@@ -229,7 +229,7 @@ function Home() {
                   <div className="absolute inset-6 rounded-full overflow-hidden"
                     style={{ background: "linear-gradient(135deg, #1a1a1a, #050505)", boxShadow: "inset 0 0 40px rgba(232,93,16,0.3), 0 0 60px rgba(232,93,16,0.4)" }}>
                     <img src={haroonImg} alt="Sir Haroon — Senior Faculty, Ignite Academy"
-                      className="w-full h-full object-cover" loading="lazy" />
+                      className="w-full h-full object-cover mx-[5px] my-[11px]" loading="lazy" />
                   </div>
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full glass flex items-baseline gap-1.5"
                     style={{ border: "1px solid rgba(232,93,16,0.4)" }}>
