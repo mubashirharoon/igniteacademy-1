@@ -78,6 +78,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#050505" },
+      { property: "og:title", content: "Ignite Academy | O Level, IGCSE, GCE & A Level Tuition" },
+      { name: "twitter:title", content: "Ignite Academy | O Level, IGCSE, GCE & A Level Tuition" },
+      { property: "og:description", content: "O Level, IGCSE, GCE and A Level tuition. Concept clarity, exam mastery and past paper practice for students in Pakistan, UAE and worldwide." },
+      { name: "twitter:description", content: "O Level, IGCSE, GCE and A Level tuition. Concept clarity, exam mastery and past paper practice for students in Pakistan, UAE and worldwide." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/wr18ExbJ9ZeGpqscEPBjwEHVUvf1/social-images/social-1779227330956-ChatGPT_Image_May_12,_2026_at_03_15_38_AM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/wr18ExbJ9ZeGpqscEPBjwEHVUvf1/social-images/social-1779227330956-ChatGPT_Image_May_12,_2026_at_03_15_38_AM.webp" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
