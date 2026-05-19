@@ -93,7 +93,7 @@ export function ConsultForm() {
           {submitting ? "Sending..." : "Book My Free Consultation"}
         </button>
         <a
-          href="https://wa.me/923211719494"
+          href="https://wa.me/923201719494"
           target="_blank"
           rel="noopener noreferrer"
           className="magnetic-btn flex-1 inline-flex items-center justify-center px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition"

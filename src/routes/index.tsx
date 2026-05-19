@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
         "@type": "EducationalOrganization",
         name: "Ignite Academy",
         description: "Premium O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
-        telephone: "+92 321 1719494",
+        telephone: "+92 320 1719494",
         areaServed: ["Pakistan", "United Arab Emirates", "International"],
       }),
     }],
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHATSAPP = "https://wa.me/923211719494";
+const WHATSAPP = "https://wa.me/923201719494";
 
 const subjects = [
   { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "Understand concepts, not just formulas." },
@@ -543,7 +543,7 @@ function Home() {
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#888] mb-4">Contact</h4>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                className="inline-flex items-center gap-2 text-sm text-white hover:text-[#ff8a3d]">
-              <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 321 1719494
+              <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 320 1719494
             </a>
           </div>
         </div>
