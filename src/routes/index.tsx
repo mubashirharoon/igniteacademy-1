@@ -8,7 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import { IgniteCore } from "@/components/IgniteCore";
 import { Particles } from "@/components/Particles";
 import { Reveal } from "@/components/Reveal";
-import { ConsultForm } from "@/components/ConsultForm";
+
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
 import fahadImg from "@/assets/faculty/fahad.png";
@@ -467,28 +467,58 @@ function Home() {
         </div>
       </section>
 
-      {/* SECTION 9 — CONSULT FORM */}
-      <section id="contact" className="relative py-28 px-6 lg:px-10">
+      {/* SECTION 9 — CONSULT FORM (Jotform Embed) */}
+      <section id="contact" className="relative py-28 px-6 lg:px-10" style={{ background: "#111111" }}>
         <div className="max-w-4xl mx-auto">
           <Reveal>
             <div className="text-center mb-12">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Consultation</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Book a free consultation.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold text-white">Book a Free Consultation</h2>
               <p className="mt-4 text-[#B8B8B8] max-w-xl mx-auto">
                 Tell us the student's level, subjects and goals. We'll guide you toward the right tuition plan.
               </p>
             </div>
           </Reveal>
           <Reveal>
-            <div className="glass rounded-3xl p-8 md:p-10 relative overflow-hidden">
-              <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-20" style={{ background: "#E85D10" }} />
-              <div className="relative">
-                <ConsultForm />
+            <div
+              className="rounded-3xl p-3 sm:p-5 md:p-8 relative overflow-hidden"
+              style={{
+                background: "#181818",
+                border: "1px solid rgba(232,93,16,0.25)",
+                boxShadow: "0 30px 80px -30px rgba(232,93,16,0.35), inset 0 1px 0 rgba(255,255,255,0.04)",
+              }}
+            >
+              <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full blur-3xl opacity-25 pointer-events-none" style={{ background: "#E85D10" }} />
+              <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full blur-3xl opacity-15 pointer-events-none" style={{ background: "#E85D10" }} />
+              <div className="relative rounded-2xl overflow-hidden" style={{ background: "transparent" }}>
+                <iframe
+                  src="https://form.jotform.com/261376878601062"
+                  title="Ignite Academy Consultation Form"
+                  width="100%"
+                  height={900}
+                  loading="lazy"
+                  scrolling="auto"
+                  allow="geolocation; microphone; camera; payment"
+                  style={{ border: "none", borderRadius: "16px", background: "transparent", display: "block", width: "100%", minHeight: "900px" }}
+                />
+              </div>
+              <div className="relative mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <span className="text-sm text-[#B8B8B8]">Prefer a quick chat?</span>
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white"
+                  style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}
+                >
+                  <MessageCircle size={16} /> Message on WhatsApp
+                </a>
               </div>
             </div>
           </Reveal>
         </div>
       </section>
+
 
       {/* SECTION 10 — FINAL CTA */}
       <section className="relative py-32 px-6 lg:px-10 overflow-hidden">
