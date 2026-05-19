@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
         "@type": "EducationalOrganization",
         name: "Ignite Academy",
         description: "Premium O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
-        telephone: "+92 300 2264873",
+        telephone: "+92 321 1719494",
         areaServed: ["Pakistan", "United Arab Emirates", "International"],
       }),
     }],
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHATSAPP = "https://wa.me/923002264873";
+const WHATSAPP = "https://wa.me/923211719494";
 
 const subjects = [
   { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "Understand concepts, not just formulas." },
