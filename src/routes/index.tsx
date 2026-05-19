@@ -20,9 +20,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ignite Academy | O Level, IGCSE, GCE & A Level Tuition" },
-      { name: "description", content: "Ignite Academy offers premium tuition for O Level, IGCSE, GCE and A Level students. Expert teachers, exam-focused preparation, past paper practice, online and physical classes for Pakistan, UAE and international students." },
+      { name: "description", content: "Ignite Academy offers expert tuition for O Level, IGCSE, GCE and A Level students. Experienced teachers, exam-focused preparation, past paper practice, online and physical classes for Pakistan, UAE and international students." },
       { name: "keywords", content: "Ignite Academy, O Level tuition, IGCSE tuition, GCE tuition, A Level tuition, online tuition UAE, Physics tuition, Chemistry tuition, Maths tuition, Computer Science tuition, Accounting tuition, Business Studies tuition, Economics tuition, Cambridge exam preparation" },
-      { property: "og:title", content: "Ignite Academy | Premium O/A Level Tuition" },
+      { property: "og:title", content: "Ignite Academy | O & A Level Tuition" },
       { property: "og:description", content: "Concept-based teaching, exam mastery and past paper practice for O Level, IGCSE, GCE and A Level — online and in person." },
       { property: "og:type", content: "website" },
     ],
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         name: "Ignite Academy",
-        description: "Premium O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
+        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
         telephone: "+92 320 1719494",
         areaServed: ["Pakistan", "United Arab Emirates", "International"],
       }),
@@ -91,7 +91,7 @@ function Home() {
           <div className="animate-rise">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs text-[#B8B8B8] mb-6">
               <Sparkles size={14} className="text-[#E85D10]" />
-              Premium O & A Level Tuition
+              O & A Level Tuition
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
               Ignite Your Grades.
@@ -99,7 +99,7 @@ function Home() {
               <span className="ignite-text">Master Your Concepts.</span>
             </h1>
             <p className="mt-6 text-lg text-[#B8B8B8] max-w-xl leading-relaxed">
-              Premium O Level, IGCSE, GCE and A Level tuition designed to build concept clarity,
+              O Level, IGCSE, GCE and A Level tuition designed to build concept clarity,
               exam confidence and stronger results.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -386,7 +386,7 @@ function Home() {
           <Reveal>
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Online Tuition</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Premium online tuition for UAE and international students.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online tuition for UAE and international students.</h2>
               <p className="mt-5 text-[#B8B8B8] leading-relaxed">
                 Personalised online classes with flexible timings, live explanation, structured
                 preparation and direct support for students in the UAE, Pakistan and abroad.
@@ -556,7 +556,7 @@ function Home() {
               </span>
               <span>Ignite <span className="ignite-text">Academy</span></span>
             </div>
-            <p className="mt-4 text-sm text-[#B8B8B8]">Premium O Level • IGCSE • GCE • A Level Tuition</p>
+            <p className="mt-4 text-sm text-[#B8B8B8]">O Level • IGCSE • GCE • A Level Tuition</p>
           </div>
           <div>
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#888] mb-4">Explore</h4>
