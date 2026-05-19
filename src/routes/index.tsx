@@ -543,7 +543,7 @@ function Home() {
             <h4 className="text-xs uppercase tracking-[0.2em] text-[#888] mb-4">Contact</h4>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                className="inline-flex items-center gap-2 text-sm text-white hover:text-[#ff8a3d]">
-              <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 300 2264873
+              <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 321 1719494
             </a>
           </div>
         </div>
