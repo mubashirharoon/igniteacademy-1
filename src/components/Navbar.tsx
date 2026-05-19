@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/ignite-logo.png";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -23,11 +24,10 @@ export function Navbar() {
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "glass-nav" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 font-display font-semibold text-lg">
-          <span className="relative inline-block w-6 h-6">
-            <span className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, #ff8a3d 0%, #E85D10 60%, transparent 80%)", boxShadow: "0 0 14px #E85D10" }} />
-          </span>
-          <span>Ignite <span className="ignite-text">Academy</span></span>
+        <a href="#home" className="flex items-center gap-2.5 font-display font-semibold text-lg">
+          <img src={logo} alt="Ignite Academy logo" className="w-9 h-9 rounded-full"
+            style={{ boxShadow: "0 0 18px rgba(232,93,16,0.45)" }} />
+          <span className="hidden sm:inline">Ignite <span className="ignite-text">Academy</span></span>
         </a>
         <nav className="hidden lg:flex items-center gap-8 text-sm text-[#B8B8B8]">
           {links.map((l) => (
