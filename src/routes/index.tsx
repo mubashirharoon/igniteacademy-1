@@ -96,13 +96,13 @@ function Home() {
               O & A Level Tuition
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
-              Ignite Your Grades.
+              Clear concepts. Better answers.
               <br />
-              <span className="ignite-text">Master Your Concepts.</span>
+              <span className="ignite-text">Stronger exam preparation.</span>
             </h1>
             <p className="mt-6 text-lg text-[#B8B8B8] max-w-xl leading-relaxed">
-              O Level, IGCSE, GCE and A Level tuition designed to build concept clarity,
-              exam confidence and stronger results.
+              Ignite Academy helps O Level, IGCSE, GCE and A Level students prepare through
+              focused classes, experienced teachers and regular past paper practice.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="magnetic-btn inline-flex items-center justify-center px-7 py-4 rounded-full text-sm font-semibold text-white"
@@ -111,7 +111,7 @@ function Home() {
               </a>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                  className="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/50">
-                <MessageCircle size={16} /> Message on WhatsApp
+                <MessageCircle size={16} /> Talk to Us on WhatsApp
               </a>
             </div>
           </div>
