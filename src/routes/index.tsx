@@ -279,8 +279,8 @@ function Home() {
                   <p className="mt-2 text-[#B8B8B8]">Economics Specialist • 5+ Years</p>
                   <p className="mt-1 text-sm text-[#888]">O & A Level Economics</p>
                   <p className="mt-5 text-[#B8B8B8] leading-relaxed max-w-2xl">
-                    Examiner-style answer writing, analysis, evaluation, weak-student improvement
-                    and rebuilding concept clarity from the ground up.
+                    Sir Mubashir is the founder of Ignite Academy and teaches O & A Level Economics.
+                    He helps students improve diagrams, analysis, evaluation and answer structure.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {["Answer Writing", "Examiner Technique", "Online", "Physical"].map((t) => (
