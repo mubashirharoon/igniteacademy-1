@@ -144,15 +144,15 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">Built for serious students.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Three disciplines. One result-driven approach.</p>
+              <h2 className="text-4xl md:text-5xl font-bold">Support where students usually lose marks.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Concepts, exam technique and past paper practice — handled together.</p>
             </div>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Brain, title: "Concept Clarity", copy: "Understand the logic behind every topic before memorising anything." },
-              { icon: Target, title: "Exam Technique", copy: "Learn how to structure answers the way examiners reward." },
-              { icon: FileText, title: "Past Paper Mastery", copy: "Practice with purpose, feedback and a clear improvement plan." },
+              { icon: Brain, title: "Concept Clarity", copy: "We explain each topic clearly before moving to practice." },
+              { icon: Target, title: "Exam Technique", copy: "Students learn how to structure answers the way examiners expect." },
+              { icon: FileText, title: "Past Paper Practice", copy: "Regular past paper work with feedback on weak areas." },
             ].map((c, i) => (
               <Reveal key={c.title} delay={i * 100}>
                 <div className="glass rounded-3xl p-8 h-full hover-lift relative overflow-hidden group">
