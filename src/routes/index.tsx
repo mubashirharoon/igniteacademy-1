@@ -46,35 +46,35 @@ export const Route = createFileRoute("/")({
 const WHATSAPP = "https://wa.me/923201719494";
 
 const subjects = [
-  { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "Understand concepts, not just formulas." },
-  { name: "Chemistry", icon: FlaskConical, level: "O Level / IGCSE / GCE", hover: "Master reactions through logic, not memory." },
-  { name: "Mathematics", icon: Sigma, level: "O Level / IGCSE / GCE / A Level", hover: "Build the intuition that beats tricky questions." },
-  { name: "Computer Science", icon: Cpu, level: "O Level / A Level", hover: "Learn theory, logic and programming with clarity." },
-  { name: "Accounting", icon: Calculator, level: "O Level / A Level", hover: "Solve problems using a clean exam method." },
-  { name: "Business Studies", icon: Briefcase, level: "O Level / A Level", hover: "Apply frameworks examiners love to see." },
-  { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Write analytical answers the way examiners reward." },
+  { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "For students struggling with numericals, definitions and applying formulas in exam questions." },
+  { name: "Chemistry", icon: FlaskConical, level: "O Level / IGCSE / GCE", hover: "Clear explanation of reactions, calculations and theory with regular practice." },
+  { name: "Mathematics", icon: Sigma, level: "O Level / IGCSE / GCE / A Level", hover: "Step-by-step support for topics, past papers and tricky exam questions." },
+  { name: "Computer Science", icon: Cpu, level: "O Level / A Level", hover: "Support with theory, logic, programming concepts and exam preparation." },
+  { name: "Accounting", icon: Calculator, level: "O Level / A Level", hover: "Practice-led teaching for formats, calculations and structured answers." },
+  { name: "Business Studies", icon: Briefcase, level: "O Level / A Level", hover: "Help with case-study questions, application and structured business answers." },
+  { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Support with diagrams, analysis, evaluation and writing stronger exam answers." },
 ];
 
 const teachers = [
-  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Clear logic, programming fundamentals, theory understanding and exam-focused preparation.", photo: fahadImg },
-  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Step-by-step accounting methods, problem-solving accuracy and past paper confidence.", photo: yasirImg },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Business concepts, case study application, structured answers and exam technique.", photo: raheelImg },
+  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg },
+  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg },
+  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg },
 ];
 
 const whyCards = [
-  { icon: GraduationCap, title: "Experienced Faculty", copy: "Subject specialists with proven student results." },
-  { icon: Target, title: "Exam-Focused Preparation", copy: "Every session ties back to the marking scheme." },
-  { icon: Brain, title: "Concept-Based Teaching", copy: "Understanding first. Memorisation later." },
-  { icon: FileText, title: "Past Paper Practice", copy: "Real questions, real feedback, real progress." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Flexibility for Pakistan, UAE and abroad." },
-  { icon: Heart, title: "Personalised Student Support", copy: "Small attention, big difference." },
+  { icon: GraduationCap, title: "Experienced Teachers", copy: "Subject specialists who have taught O and A Level students for years." },
+  { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
+  { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
+  { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes in Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
 const testimonials = [
-  { quote: "I finally understood how to write Economics answers properly.", who: "A Level Student" },
-  { quote: "My son became much more confident before his exams.", who: "Parent, UAE" },
-  { quote: "The teaching is structured, clear and exam-focused.", who: "O Level Student" },
-  { quote: "The past paper feedback completely changed my approach.", who: "IGCSE Student" },
+  { quote: "My son used to panic in numericals. The step-by-step practice helped him attempt questions with more confidence.", who: "Parent of O Level Physics Student" },
+  { quote: "I knew the content, but my answers were weak. The answer-writing practice helped me understand analysis and evaluation better.", who: "A Level Economics Student" },
+  { quote: "The classes were organised and focused. Regular past paper practice made a visible difference.", who: "Parent of IGCSE Maths Student" },
+  { quote: "Case study questions became easier once I learned how to connect the answer with the business situation.", who: "O Level Business Student" },
 ];
 
 function Home() {
@@ -96,13 +96,13 @@ function Home() {
               O & A Level Tuition
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.02] tracking-tight">
-              Ignite Your Grades.
+              Clear concepts. Better answers.
               <br />
-              <span className="ignite-text">Master Your Concepts.</span>
+              <span className="ignite-text">Stronger exam preparation.</span>
             </h1>
             <p className="mt-6 text-lg text-[#B8B8B8] max-w-xl leading-relaxed">
-              O Level, IGCSE, GCE and A Level tuition designed to build concept clarity,
-              exam confidence and stronger results.
+              Ignite Academy helps O Level, IGCSE, GCE and A Level students prepare through
+              focused classes, experienced teachers and regular past paper practice.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="magnetic-btn inline-flex items-center justify-center px-7 py-4 rounded-full text-sm font-semibold text-white"
@@ -111,7 +111,7 @@ function Home() {
               </a>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                  className="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/50">
-                <MessageCircle size={16} /> Message on WhatsApp
+                <MessageCircle size={16} /> Talk to Us on WhatsApp
               </a>
             </div>
           </div>
@@ -144,15 +144,15 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold">Built for serious students.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Three disciplines. One result-driven approach.</p>
+              <h2 className="text-4xl md:text-5xl font-bold">Support where students usually lose marks.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Concepts, exam technique and past paper practice — handled together.</p>
             </div>
           </Reveal>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Brain, title: "Concept Clarity", copy: "Understand the logic behind every topic before memorising anything." },
-              { icon: Target, title: "Exam Technique", copy: "Learn how to structure answers the way examiners reward." },
-              { icon: FileText, title: "Past Paper Mastery", copy: "Practice with purpose, feedback and a clear improvement plan." },
+              { icon: Brain, title: "Concept Clarity", copy: "We explain each topic clearly before moving to practice." },
+              { icon: Target, title: "Exam Technique", copy: "Students learn how to structure answers the way examiners expect." },
+              { icon: FileText, title: "Past Paper Practice", copy: "Regular past paper work with feedback on weak areas." },
             ].map((c, i) => (
               <Reveal key={c.title} delay={i * 100}>
                 <div className="glass rounded-3xl p-8 h-full hover-lift relative overflow-hidden group">
@@ -179,8 +179,8 @@ function Home() {
           <Reveal>
             <div className="max-w-2xl mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Subjects</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Subjects that shape results.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Hover any subject to see what we promise.</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Subjects We Teach.</h2>
+              <p className="mt-4 text-[#B8B8B8]">O Level, IGCSE, GCE and A Level — taught by subject specialists.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -209,8 +209,8 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Faculty</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet the faculty behind the results.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Experienced teachers. Focused subjects. Exam-driven preparation.</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet Our Teachers.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Subject specialists teaching O Level, IGCSE, GCE and A Level students.</p>
             </div>
           </Reveal>
 
@@ -245,8 +245,9 @@ function Home() {
                   <p className="mt-2 text-[#B8B8B8]">Physics • Chemistry • Mathematics</p>
                   <p className="mt-1 text-sm text-[#888]">O Level / IGCSE / GCE / A Level Mathematics</p>
                   <p className="mt-6 text-base text-[#B8B8B8] leading-relaxed max-w-xl">
-                    Concept clarity, structured learning, exam preparation and long-term academic
-                    confidence — built across three decades of teaching.
+                    Sir Haroon has taught Physics, Chemistry and Mathematics for over 30 years.
+                    His classes focus on clear explanation, regular practice and helping students
+                    handle difficult exam questions step by step.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {["Online", "Physical", "30+ Years", "O/A Level"].map((t) => (
@@ -278,8 +279,8 @@ function Home() {
                   <p className="mt-2 text-[#B8B8B8]">Economics Specialist • 5+ Years</p>
                   <p className="mt-1 text-sm text-[#888]">O & A Level Economics</p>
                   <p className="mt-5 text-[#B8B8B8] leading-relaxed max-w-2xl">
-                    Examiner-style answer writing, analysis, evaluation, weak-student improvement
-                    and rebuilding concept clarity from the ground up.
+                    Sir Mubashir is the founder of Ignite Academy and teaches O & A Level Economics.
+                    He helps students improve diagrams, analysis, evaluation and answer structure.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {["Answer Writing", "Examiner Technique", "Online", "Physical"].map((t) => (
@@ -326,7 +327,8 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Why Ignite</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why students choose Ignite.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why Parents Choose Ignite Academy.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Physical classes available in Karachi. Online classes available for Pakistan, UAE and international students.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -351,8 +353,8 @@ function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-20">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">The Ignite Method</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">A clearer path to better grades.</h2>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Our Approach</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">How We Help Students Improve.</h2>
             </div>
           </Reveal>
           <div className="relative">
@@ -361,9 +363,9 @@ function Home() {
               style={{ background: "linear-gradient(90deg, transparent, #E85D10, transparent)", boxShadow: "0 0 8px #E85D10" }} />
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { n: "01", title: "Diagnose Weaknesses", copy: "We identify exactly where the student is losing marks." },
-                { n: "02", title: "Build Concepts", copy: "We rebuild understanding with clear explanation and guided practice." },
-                { n: "03", title: "Master Exam Answers", copy: "We train students to write, solve and present answers according to exam expectations." },
+                { n: "01", title: "Identify Weak Areas", copy: "We start by finding where the student is losing marks in past papers and class work." },
+                { n: "02", title: "Rebuild Concepts", copy: "Topics are taught again with clear explanation and guided practice." },
+                { n: "03", title: "Practise Exam Answers", copy: "Students practise full questions and learn how to present answers the way examiners expect." },
               ].map((s, i) => (
                 <Reveal key={s.n} delay={i * 150}>
                   <div className="text-center">
@@ -390,12 +392,13 @@ function Home() {
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Online Tuition</span>
               <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online tuition for UAE and international students.</h2>
               <p className="mt-5 text-[#B8B8B8] leading-relaxed">
-                Personalised online classes with flexible timings, live explanation, structured
-                preparation and direct support for students in the UAE, Pakistan and abroad.
+                Live online classes with flexible timings and direct teacher support for
+                students based in the UAE, Pakistan and abroad. Past paper practice and
+                feedback are part of every course.
               </p>
               <a href="#contact" className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white"
                 style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
-                Start Online Classes
+                Ask About Online Classes
               </a>
             </div>
           </Reveal>
@@ -431,10 +434,10 @@ function Home() {
               <div className="absolute inset-0 grid-paper opacity-50" />
               <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-40 rounded-full blur-3xl opacity-30" style={{ background: "#E85D10" }} />
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold">Focused physical classes for serious students.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold">Physical classes in Karachi.</h2>
                 <p className="mt-5 max-w-2xl mx-auto text-[#B8B8B8]">
-                  Students who prefer in-person learning can join structured physical classes with
-                  focused teaching, guided practice and exam preparation.
+                  Students who prefer in-person learning can join our physical classes in Karachi
+                  with focused teaching, guided practice and past paper preparation.
                 </p>
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                    className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
@@ -452,7 +455,7 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Voices</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Students and parents say it best.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">What Students and Parents Notice.</h2>
             </div>
           </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -466,6 +469,9 @@ function Home() {
               </Reveal>
             ))}
           </div>
+          <p className="mt-10 text-center text-xs text-[#666] max-w-xl mx-auto">
+            Testimonials reflect individual student experiences. Results depend on effort and consistency — we do not guarantee specific grades.
+          </p>
         </div>
       </section>
 
@@ -513,7 +519,7 @@ function Home() {
                   className="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white"
                   style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}
                 >
-                  <MessageCircle size={16} /> Message on WhatsApp
+                  <MessageCircle size={16} /> Talk to Us on WhatsApp
                 </a>
               </div>
             </div>
@@ -529,10 +535,10 @@ function Home() {
         <div className="relative max-w-4xl mx-auto text-center">
           <Reveal>
             <h2 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-              Ready to <span className="ignite-text">ignite your result?</span>
+              Ready to <span className="ignite-text">improve your grades?</span>
             </h2>
             <p className="mt-6 text-lg text-[#B8B8B8] max-w-2xl mx-auto">
-              Book a free consultation and find the right teacher, subject plan and exam strategy for your level.
+              Book a free consultation and we'll suggest the right teacher, subject plan and class timings for your level.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact" className="magnetic-btn inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold text-white"
@@ -541,7 +547,7 @@ function Home() {
               </a>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                  className="magnetic-btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/60">
-                <MessageCircle size={16} /> Message on WhatsApp
+                <MessageCircle size={16} /> Talk to Us on WhatsApp
               </a>
             </div>
           </Reveal>
