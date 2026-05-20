@@ -486,6 +486,9 @@ function Home() {
               <p className="mt-4 text-[#B8B8B8] max-w-xl mx-auto">
                 Tell us the student's level, subjects and goals. We'll guide you toward the right tuition plan.
               </p>
+              <p className="mt-3 text-sm text-[#888] max-w-xl mx-auto">
+                For physical classes, visit us at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi.
+              </p>
             </div>
           </Reveal>
           <Reveal>
