@@ -179,8 +179,8 @@ function Home() {
           <Reveal>
             <div className="max-w-2xl mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Subjects</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Subjects that shape results.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Hover any subject to see what we promise.</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Subjects We Teach.</h2>
+              <p className="mt-4 text-[#B8B8B8]">O Level, IGCSE, GCE and A Level — taught by subject specialists.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
