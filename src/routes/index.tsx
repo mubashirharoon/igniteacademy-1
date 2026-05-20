@@ -66,7 +66,7 @@ const whyCards = [
   { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
   { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
   { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes in Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for Pakistan, UAE and abroad." },
   { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
