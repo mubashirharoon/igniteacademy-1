@@ -245,8 +245,9 @@ function Home() {
                   <p className="mt-2 text-[#B8B8B8]">Physics • Chemistry • Mathematics</p>
                   <p className="mt-1 text-sm text-[#888]">O Level / IGCSE / GCE / A Level Mathematics</p>
                   <p className="mt-6 text-base text-[#B8B8B8] leading-relaxed max-w-xl">
-                    Concept clarity, structured learning, exam preparation and long-term academic
-                    confidence — built across three decades of teaching.
+                    Sir Haroon has taught Physics, Chemistry and Mathematics for over 30 years.
+                    His classes focus on clear explanation, regular practice and helping students
+                    handle difficult exam questions step by step.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {["Online", "Physical", "30+ Years", "O/A Level"].map((t) => (
