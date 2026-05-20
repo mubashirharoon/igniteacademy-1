@@ -392,12 +392,13 @@ function Home() {
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Online Tuition</span>
               <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online tuition for UAE and international students.</h2>
               <p className="mt-5 text-[#B8B8B8] leading-relaxed">
-                Personalised online classes with flexible timings, live explanation, structured
-                preparation and direct support for students in the UAE, Pakistan and abroad.
+                Live online classes with flexible timings and direct teacher support for
+                students based in the UAE, Pakistan and abroad. Past paper practice and
+                feedback are part of every course.
               </p>
               <a href="#contact" className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white"
                 style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
-                Start Online Classes
+                Ask About Online Classes
               </a>
             </div>
           </Reveal>
