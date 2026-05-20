@@ -353,8 +353,8 @@ function Home() {
         <div className="max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-20">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">The Ignite Method</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">A clearer path to better grades.</h2>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Our Approach</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">How We Help Students Improve.</h2>
             </div>
           </Reveal>
           <div className="relative">
@@ -363,9 +363,9 @@ function Home() {
               style={{ background: "linear-gradient(90deg, transparent, #E85D10, transparent)", boxShadow: "0 0 8px #E85D10" }} />
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { n: "01", title: "Diagnose Weaknesses", copy: "We identify exactly where the student is losing marks." },
-                { n: "02", title: "Build Concepts", copy: "We rebuild understanding with clear explanation and guided practice." },
-                { n: "03", title: "Master Exam Answers", copy: "We train students to write, solve and present answers according to exam expectations." },
+                { n: "01", title: "Identify Weak Areas", copy: "We start by finding where the student is losing marks in past papers and class work." },
+                { n: "02", title: "Rebuild Concepts", copy: "Topics are taught again with clear explanation and guided practice." },
+                { n: "03", title: "Practise Exam Answers", copy: "Students practise full questions and learn how to present answers the way examiners expect." },
               ].map((s, i) => (
                 <Reveal key={s.n} delay={i * 150}>
                   <div className="text-center">
