@@ -535,10 +535,10 @@ function Home() {
         <div className="relative max-w-4xl mx-auto text-center">
           <Reveal>
             <h2 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
-              Ready to <span className="ignite-text">ignite your result?</span>
+              Ready to <span className="ignite-text">improve your grades?</span>
             </h2>
             <p className="mt-6 text-lg text-[#B8B8B8] max-w-2xl mx-auto">
-              Book a free consultation and find the right teacher, subject plan and exam strategy for your level.
+              Book a free consultation and we'll suggest the right teacher, subject plan and class timings for your level.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#contact" className="magnetic-btn inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-semibold text-white"
