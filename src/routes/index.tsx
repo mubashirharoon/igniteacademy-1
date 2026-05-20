@@ -455,7 +455,7 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Voices</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Students and parents say it best.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">What Students and Parents Notice.</h2>
             </div>
           </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -469,6 +469,9 @@ function Home() {
               </Reveal>
             ))}
           </div>
+          <p className="mt-10 text-center text-xs text-[#666] max-w-xl mx-auto">
+            Testimonials reflect individual student experiences. Results depend on effort and consistency — we do not guarantee specific grades.
+          </p>
         </div>
       </section>
 
