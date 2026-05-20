@@ -519,7 +519,7 @@ function Home() {
                   className="magnetic-btn inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white"
                   style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}
                 >
-                  <MessageCircle size={16} /> Message on WhatsApp
+                  <MessageCircle size={16} /> Talk to Us on WhatsApp
                 </a>
               </div>
             </div>
@@ -547,7 +547,7 @@ function Home() {
               </a>
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                  className="magnetic-btn inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/60">
-                <MessageCircle size={16} /> Message on WhatsApp
+                <MessageCircle size={16} /> Talk to Us on WhatsApp
               </a>
             </div>
           </Reveal>
