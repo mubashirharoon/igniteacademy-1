@@ -66,7 +66,7 @@ const whyCards = [
   { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
   { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
   { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes in Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for Pakistan, UAE and abroad." },
   { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
@@ -328,7 +328,7 @@ function Home() {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Why Ignite</span>
               <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why Parents Choose Ignite Academy.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Physical classes available in Karachi. Online classes available for Pakistan, UAE and international students.</p>
+              <p className="mt-4 text-[#B8B8B8]">Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes available for Pakistan, UAE and international students.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -434,10 +434,11 @@ function Home() {
               <div className="absolute inset-0 grid-paper opacity-50" />
               <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-40 rounded-full blur-3xl opacity-30" style={{ background: "#E85D10" }} />
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold">Physical classes in Karachi.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold">Physical Classes in DHA Phase 6, Karachi.</h2>
                 <p className="mt-5 max-w-2xl mx-auto text-[#B8B8B8]">
-                  Students who prefer in-person learning can join our physical classes in Karachi
-                  with focused teaching, guided practice and past paper preparation.
+                  Students who prefer in-person learning can join focused physical classes at
+                  Ignite Academy in DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Classes are
+                  structured around clear explanation, guided practice and exam preparation.
                 </p>
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                    className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
@@ -484,6 +485,9 @@ function Home() {
               <h2 className="mt-3 text-4xl md:text-5xl font-bold text-white">Book a Free Consultation</h2>
               <p className="mt-4 text-[#B8B8B8] max-w-xl mx-auto">
                 Tell us the student's level, subjects and goals. We'll guide you toward the right tuition plan.
+              </p>
+              <p className="mt-3 text-sm text-[#888] max-w-xl mx-auto">
+                For physical classes, visit us at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi.
               </p>
             </div>
           </Reveal>
@@ -583,6 +587,12 @@ function Home() {
                className="inline-flex items-center gap-2 text-sm text-white hover:text-[#ff8a3d]">
               <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 320 1719494
             </a>
+            <p className="mt-4 text-sm text-[#B8B8B8] leading-relaxed">
+              <span className="text-white">Physical Classes:</span> DHA Phase 6, Lane 3, Ittehad Commercial, Karachi
+            </p>
+            <p className="mt-2 text-sm text-[#B8B8B8] leading-relaxed">
+              <span className="text-white">Online Classes:</span> Pakistan, UAE and International Students
+            </p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-[#666] flex flex-col md:flex-row justify-between gap-3">
