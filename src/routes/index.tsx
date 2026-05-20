@@ -46,35 +46,35 @@ export const Route = createFileRoute("/")({
 const WHATSAPP = "https://wa.me/923201719494";
 
 const subjects = [
-  { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "Understand concepts, not just formulas." },
-  { name: "Chemistry", icon: FlaskConical, level: "O Level / IGCSE / GCE", hover: "Master reactions through logic, not memory." },
-  { name: "Mathematics", icon: Sigma, level: "O Level / IGCSE / GCE / A Level", hover: "Build the intuition that beats tricky questions." },
-  { name: "Computer Science", icon: Cpu, level: "O Level / A Level", hover: "Learn theory, logic and programming with clarity." },
-  { name: "Accounting", icon: Calculator, level: "O Level / A Level", hover: "Solve problems using a clean exam method." },
-  { name: "Business Studies", icon: Briefcase, level: "O Level / A Level", hover: "Apply frameworks examiners love to see." },
-  { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Write analytical answers the way examiners reward." },
+  { name: "Physics", icon: Atom, level: "O Level / IGCSE / GCE", hover: "For students struggling with numericals, definitions and applying formulas in exam questions." },
+  { name: "Chemistry", icon: FlaskConical, level: "O Level / IGCSE / GCE", hover: "Clear explanation of reactions, calculations and theory with regular practice." },
+  { name: "Mathematics", icon: Sigma, level: "O Level / IGCSE / GCE / A Level", hover: "Step-by-step support for topics, past papers and tricky exam questions." },
+  { name: "Computer Science", icon: Cpu, level: "O Level / A Level", hover: "Support with theory, logic, programming concepts and exam preparation." },
+  { name: "Accounting", icon: Calculator, level: "O Level / A Level", hover: "Practice-led teaching for formats, calculations and structured answers." },
+  { name: "Business Studies", icon: Briefcase, level: "O Level / A Level", hover: "Help with case-study questions, application and structured business answers." },
+  { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Support with diagrams, analysis, evaluation and writing stronger exam answers." },
 ];
 
 const teachers = [
-  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Clear logic, programming fundamentals, theory understanding and exam-focused preparation.", photo: fahadImg },
-  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Step-by-step accounting methods, problem-solving accuracy and past paper confidence.", photo: yasirImg },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Business concepts, case study application, structured answers and exam technique.", photo: raheelImg },
+  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg },
+  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg },
+  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg },
 ];
 
 const whyCards = [
-  { icon: GraduationCap, title: "Experienced Faculty", copy: "Subject specialists with proven student results." },
-  { icon: Target, title: "Exam-Focused Preparation", copy: "Every session ties back to the marking scheme." },
-  { icon: Brain, title: "Concept-Based Teaching", copy: "Understanding first. Memorisation later." },
-  { icon: FileText, title: "Past Paper Practice", copy: "Real questions, real feedback, real progress." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Flexibility for Pakistan, UAE and abroad." },
-  { icon: Heart, title: "Personalised Student Support", copy: "Small attention, big difference." },
+  { icon: GraduationCap, title: "Experienced Teachers", copy: "Subject specialists who have taught O and A Level students for years." },
+  { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
+  { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
+  { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes in Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
 const testimonials = [
-  { quote: "I finally understood how to write Economics answers properly.", who: "A Level Student" },
-  { quote: "My son became much more confident before his exams.", who: "Parent, UAE" },
-  { quote: "The teaching is structured, clear and exam-focused.", who: "O Level Student" },
-  { quote: "The past paper feedback completely changed my approach.", who: "IGCSE Student" },
+  { quote: "My son used to panic in numericals. The step-by-step practice helped him attempt questions with more confidence.", who: "Parent of O Level Physics Student" },
+  { quote: "I knew the content, but my answers were weak. The answer-writing practice helped me understand analysis and evaluation better.", who: "A Level Economics Student" },
+  { quote: "The classes were organised and focused. Regular past paper practice made a visible difference.", who: "Parent of IGCSE Maths Student" },
+  { quote: "Case study questions became easier once I learned how to connect the answer with the business situation.", who: "O Level Business Student" },
 ];
 
 function Home() {
