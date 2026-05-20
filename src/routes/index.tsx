@@ -434,10 +434,10 @@ function Home() {
               <div className="absolute inset-0 grid-paper opacity-50" />
               <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-96 h-40 rounded-full blur-3xl opacity-30" style={{ background: "#E85D10" }} />
               <div className="relative">
-                <h2 className="text-4xl md:text-5xl font-bold">Focused physical classes for serious students.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold">Physical classes in Karachi.</h2>
                 <p className="mt-5 max-w-2xl mx-auto text-[#B8B8B8]">
-                  Students who prefer in-person learning can join structured physical classes with
-                  focused teaching, guided practice and exam preparation.
+                  Students who prefer in-person learning can join our physical classes in Karachi
+                  with focused teaching, guided practice and past paper preparation.
                 </p>
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
                    className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
