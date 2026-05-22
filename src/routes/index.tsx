@@ -390,11 +390,10 @@ function Home() {
           <Reveal>
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Online Tuition</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online tuition for UAE and international students.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online Classes for Students Across Pakistan.</h2>
               <p className="mt-5 text-[#B8B8B8] leading-relaxed">
-                Live online classes with flexible timings and direct teacher support for
-                students based in the UAE, Pakistan and abroad. Past paper practice and
-                feedback are part of every course.
+                Live online classes with direct teacher support for students across Pakistan.
+                Past paper practice, digital notes and regular feedback are part of every course.
               </p>
               <a href="#contact" className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white"
                 style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
@@ -409,7 +408,7 @@ function Home() {
               <div className="relative grid grid-cols-2 gap-4">
                 {[
                   { icon: Users, label: "1-on-1 Sessions" },
-                  { icon: Globe, label: "UAE-Friendly Timings" },
+                  { icon: Globe, label: "Pakistan-Wide Access" },
                   { icon: BookOpen, label: "Live Whiteboard" },
                   { icon: FileText, label: "Past Paper Feedback" },
                   { icon: MessageCircle, label: "WhatsApp Support" },
