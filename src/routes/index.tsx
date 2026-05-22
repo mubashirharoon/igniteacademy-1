@@ -66,7 +66,7 @@ const whyCards = [
   { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
   { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
   { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for students across Pakistan." },
   { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
@@ -132,8 +132,8 @@ function Home() {
               <div className="text-base font-semibold">Online & Physical</div>
             </div>
             <div className="absolute -right-4 bottom-4 glass rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "2s" }}>
-              <div className="text-[10px] uppercase tracking-wider text-[#B8B8B8]">Reach</div>
-              <div className="text-base font-semibold">Pakistan & UAE</div>
+              <div className="text-[10px] uppercase tracking-wider text-[#B8B8B8]">Location</div>
+              <div className="text-base font-semibold">Defence Phase 6</div>
             </div>
           </div>
         </div>
@@ -328,7 +328,7 @@ function Home() {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Why Ignite</span>
               <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why Parents Choose Ignite Academy.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes available for Pakistan, UAE and international students.</p>
+              <p className="mt-4 text-[#B8B8B8]">Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for students across Pakistan.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
