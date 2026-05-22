@@ -21,8 +21,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ignite Academy | O Level, IGCSE, GCE & A Level Tuition" },
-      { name: "description", content: "Ignite Academy offers expert tuition for O Level, IGCSE, GCE and A Level students. Experienced teachers, exam-focused preparation, past paper practice, online and physical classes for Pakistan, UAE and international students." },
-      { name: "keywords", content: "Ignite Academy, O Level tuition, IGCSE tuition, GCE tuition, A Level tuition, online tuition UAE, Physics tuition, Chemistry tuition, Maths tuition, Computer Science tuition, Accounting tuition, Business Studies tuition, Economics tuition, Cambridge exam preparation" },
+      { name: "description", content: "Ignite Academy offers expert tuition for O Level, IGCSE, GCE and A Level students. Experienced teachers, exam-focused preparation, past paper practice, online and physical classes in Defence Phase 6, Karachi." },
+      { name: "keywords", content: "Ignite Academy, O Level tuition, IGCSE tuition, GCE tuition, A Level tuition, online tuition Karachi, Physics tuition, Chemistry tuition, Maths tuition, Computer Science tuition, Accounting tuition, Business Studies tuition, Economics tuition, Cambridge exam preparation" },
       { property: "og:title", content: "Ignite Academy | O & A Level Tuition" },
       { property: "og:description", content: "Concept-based teaching, exam mastery and past paper practice for O Level, IGCSE, GCE and A Level — online and in person." },
       { property: "og:type", content: "website" },
@@ -34,9 +34,9 @@ export const Route = createFileRoute("/")({
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         name: "Ignite Academy",
-        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
+        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan and abroad.",
         telephone: "+92 320 1719494",
-        areaServed: ["Pakistan", "United Arab Emirates", "International"],
+        areaServed: ["Pakistan", "International"],
       }),
     }],
   }),
@@ -66,7 +66,7 @@ const whyCards = [
   { icon: Target, title: "Exam-Focused Preparation", copy: "Lessons tied to the syllabus and the marking scheme." },
   { icon: Brain, title: "Concept-Based Teaching", copy: "We explain the topic first, then practise it properly." },
   { icon: FileText, title: "Regular Past Paper Practice", copy: "Real past paper questions with feedback on each attempt." },
-  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for Pakistan, UAE and abroad." },
+  { icon: Globe, title: "Online & Physical Classes", copy: "Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for students across Pakistan." },
   { icon: Heart, title: "Personal Student Support", copy: "Small batches and direct attention for each student." },
 ];
 
@@ -132,8 +132,8 @@ function Home() {
               <div className="text-base font-semibold">Online & Physical</div>
             </div>
             <div className="absolute -right-4 bottom-4 glass rounded-2xl px-4 py-3 animate-float" style={{ animationDelay: "2s" }}>
-              <div className="text-[10px] uppercase tracking-wider text-[#B8B8B8]">Reach</div>
-              <div className="text-base font-semibold">Pakistan & UAE</div>
+              <div className="text-[10px] uppercase tracking-wider text-[#B8B8B8]">Location</div>
+              <div className="text-base font-semibold">Defence Phase 6</div>
             </div>
           </div>
         </div>
@@ -328,7 +328,7 @@ function Home() {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Why Ignite</span>
               <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why Parents Choose Ignite Academy.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes available for Pakistan, UAE and international students.</p>
+              <p className="mt-4 text-[#B8B8B8]">Physical classes at DHA Phase 6, Lane 3, Ittehad Commercial, Karachi. Online classes for students across Pakistan.</p>
             </div>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -390,11 +390,10 @@ function Home() {
           <Reveal>
             <div>
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Online Tuition</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online tuition for UAE and international students.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Online Classes for Students Across Pakistan.</h2>
               <p className="mt-5 text-[#B8B8B8] leading-relaxed">
-                Live online classes with flexible timings and direct teacher support for
-                students based in the UAE, Pakistan and abroad. Past paper practice and
-                feedback are part of every course.
+                Live online classes with direct teacher support for students across Pakistan.
+                Past paper practice, digital notes and regular feedback are part of every course.
               </p>
               <a href="#contact" className="mt-8 magnetic-btn inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-semibold text-white"
                 style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
@@ -409,7 +408,7 @@ function Home() {
               <div className="relative grid grid-cols-2 gap-4">
                 {[
                   { icon: Users, label: "1-on-1 Sessions" },
-                  { icon: Globe, label: "UAE-Friendly Timings" },
+                  { icon: Globe, label: "Pakistan-Wide Access" },
                   { icon: BookOpen, label: "Live Whiteboard" },
                   { icon: FileText, label: "Past Paper Feedback" },
                   { icon: MessageCircle, label: "WhatsApp Support" },
@@ -588,16 +587,16 @@ function Home() {
               <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 320 1719494
             </a>
             <p className="mt-4 text-sm text-[#B8B8B8] leading-relaxed">
-              <span className="text-white">Physical Classes:</span> DHA Phase 6, Lane 3, Ittehad Commercial, Karachi
+              <span className="text-white">Physical Classes:</span> Defence Phase 6, Karachi
             </p>
             <p className="mt-2 text-sm text-[#B8B8B8] leading-relaxed">
-              <span className="text-white">Online Classes:</span> Pakistan, UAE and International Students
+              <span className="text-white">Online Classes:</span> Available across Pakistan
             </p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-[#666] flex flex-col md:flex-row justify-between gap-3">
           <span>© {new Date().getFullYear()} Ignite Academy. All rights reserved.</span>
-          <span>Pakistan • UAE • International</span>
+          <span>Defence Phase 6, Karachi</span>
         </div>
       </footer>
     </div>
