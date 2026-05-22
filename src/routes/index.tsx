@@ -587,16 +587,16 @@ function Home() {
               <MessageCircle size={16} className="text-[#E85D10]" /> WhatsApp: +92 320 1719494
             </a>
             <p className="mt-4 text-sm text-[#B8B8B8] leading-relaxed">
-              <span className="text-white">Physical Classes:</span> DHA Phase 6, Lane 3, Ittehad Commercial, Karachi
+              <span className="text-white">Physical Classes:</span> Defence Phase 6, Karachi
             </p>
             <p className="mt-2 text-sm text-[#B8B8B8] leading-relaxed">
-              <span className="text-white">Online Classes:</span> Pakistan, UAE and International Students
+              <span className="text-white">Online Classes:</span> Available across Pakistan
             </p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-[#666] flex flex-col md:flex-row justify-between gap-3">
           <span>© {new Date().getFullYear()} Ignite Academy. All rights reserved.</span>
-          <span>Pakistan • UAE • International</span>
+          <span>Defence Phase 6, Karachi</span>
         </div>
       </footer>
     </div>
