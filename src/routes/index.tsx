@@ -21,8 +21,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ignite Academy | O Level, IGCSE, GCE & A Level Tuition" },
-      { name: "description", content: "Ignite Academy offers expert tuition for O Level, IGCSE, GCE and A Level students. Experienced teachers, exam-focused preparation, past paper practice, online and physical classes for Pakistan, UAE and international students." },
-      { name: "keywords", content: "Ignite Academy, O Level tuition, IGCSE tuition, GCE tuition, A Level tuition, online tuition UAE, Physics tuition, Chemistry tuition, Maths tuition, Computer Science tuition, Accounting tuition, Business Studies tuition, Economics tuition, Cambridge exam preparation" },
+      { name: "description", content: "Ignite Academy offers expert tuition for O Level, IGCSE, GCE and A Level students. Experienced teachers, exam-focused preparation, past paper practice, online and physical classes in Defence Phase 6, Karachi." },
+      { name: "keywords", content: "Ignite Academy, O Level tuition, IGCSE tuition, GCE tuition, A Level tuition, online tuition Karachi, Physics tuition, Chemistry tuition, Maths tuition, Computer Science tuition, Accounting tuition, Business Studies tuition, Economics tuition, Cambridge exam preparation" },
       { property: "og:title", content: "Ignite Academy | O & A Level Tuition" },
       { property: "og:description", content: "Concept-based teaching, exam mastery and past paper practice for O Level, IGCSE, GCE and A Level — online and in person." },
       { property: "og:type", content: "website" },
@@ -34,9 +34,9 @@ export const Route = createFileRoute("/")({
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         name: "Ignite Academy",
-        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan, UAE and worldwide.",
+        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan and abroad.",
         telephone: "+92 320 1719494",
-        areaServed: ["Pakistan", "United Arab Emirates", "International"],
+        areaServed: ["Pakistan", "International"],
       }),
     }],
   }),
