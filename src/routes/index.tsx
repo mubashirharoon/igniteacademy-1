@@ -355,10 +355,16 @@ function Home() {
                     His classes focus on clear explanation, regular practice and helping students
                     handle difficult exam questions step by step.
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2 items-center">
                     {["Online", "Physical", "30+ Years", "O/A Level"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs border border-white/10 text-[#B8B8B8]">{t}</span>
                     ))}
+                    <button
+                      onClick={() => openVideo({ title: "Sir Haroon — Introduction" })}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-white border border-[#E85D10]/50 hover:bg-[#E85D10]/10 transition"
+                    >
+                      <Play size={12} fill="currentColor" /> Watch Introduction
+                    </button>
                   </div>
                 </div>
               </div>
