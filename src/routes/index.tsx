@@ -445,6 +445,66 @@ function Home() {
         </div>
       </section>
 
+      {/* MEET THE FOUNDER */}
+      <section id="founder" className="relative py-28 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <button
+              type="button"
+              onClick={() => openVideo(founderVideo)}
+              className="group relative block w-full aspect-video rounded-3xl overflow-hidden glass ignite-border-glow text-left"
+              aria-label="Play founder video"
+            >
+              <img
+                src={mubashirImg}
+                alt="Sir Mubashir — Founder of Ignite Academy"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0"
+                style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.7))" }} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="relative w-20 h-20 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ background: "var(--grad-ignite)", boxShadow: "0 16px 50px -10px rgba(232,93,16,0.75), 0 0 0 8px rgba(232,93,16,0.15)" }}>
+                  <Play size={26} className="text-white ml-1" fill="currentColor" />
+                </span>
+              </div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Founder Message</p>
+                <p className="mt-1 text-lg font-semibold">Sir Mubashir — Founder, Ignite Academy</p>
+              </div>
+            </button>
+          </Reveal>
+          <Reveal delay={120}>
+            <div>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Meet The Founder</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why I Started Ignite Academy.</h2>
+              <p className="mt-5 text-[#B8B8B8] leading-relaxed">
+                I started Ignite Academy after years of teaching O and A Level Economics and seeing the same gap repeat —
+                students who knew the content but couldn't structure exam answers the way Cambridge wants. We built this
+                academy around three things: clear concept teaching, real exam technique, and consistent past paper practice.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-[#B8B8B8]">
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> 5+ years teaching Cambridge Economics</li>
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> Trained students who improved from C/D grades to A/A*</li>
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> Believes small batches and direct feedback beat large lectures</li>
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#contact"
+                   className="magnetic-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white"
+                   style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
+                  <CalendarCheck size={16} /> Book a Free Academic Consultation
+                </a>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+                   className="magnetic-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
+                  <MessageCircle size={16} /> Message Founder
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* SECTION 4 — WHY IGNITE */}
       <section id="why" className="relative py-28 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
