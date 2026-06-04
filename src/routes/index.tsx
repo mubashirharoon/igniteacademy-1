@@ -416,9 +416,15 @@ function Home() {
                   </div>
                   <p className="text-xs text-[#888] uppercase tracking-wider">{t.levels}</p>
                   <p className="mt-3 text-sm text-[#B8B8B8] leading-relaxed">{t.focus}</p>
-                  <div className="mt-5 flex gap-2">
+                  <div className="mt-5 flex flex-wrap items-center gap-2">
                     <span className="px-2.5 py-1 rounded-full text-[10px] border border-white/10 text-[#B8B8B8]">Online</span>
                     <span className="px-2.5 py-1 rounded-full text-[10px] border border-white/10 text-[#B8B8B8]">Physical</span>
+                    <button
+                      onClick={() => openVideo(t.intro)}
+                      className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white border border-[#E85D10]/40 hover:bg-[#E85D10]/10 transition"
+                    >
+                      <Play size={12} fill="currentColor" /> Watch Introduction
+                    </button>
                   </div>
                 </div>
               </Reveal>
