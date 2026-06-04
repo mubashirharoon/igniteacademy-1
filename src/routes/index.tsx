@@ -193,6 +193,58 @@ function Home() {
         </div>
       </section>
 
+      {/* VIDEO — EXPERIENCE A REAL CLASS */}
+      <section id="watch" className="relative py-28 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Watch</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Experience a Real Ignite Academy Class.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Don't just read about our teaching. Watch it.</p>
+            </div>
+          </Reveal>
+
+          {/* Featured player */}
+          <Reveal>
+            <button
+              type="button"
+              onClick={() => openVideo({ title: "Inside an Ignite Academy Class — Featured Walkthrough" })}
+              className="group relative block w-full aspect-video rounded-3xl overflow-hidden glass ignite-border-glow text-left"
+              aria-label="Play featured class video"
+            >
+              <div className="absolute inset-0 grid-paper opacity-40" />
+              <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl opacity-30" style={{ background: "#E85D10" }} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="relative w-24 h-24 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ background: "var(--grad-ignite)", boxShadow: "0 20px 60px -10px rgba(232,93,16,0.7), 0 0 0 10px rgba(232,93,16,0.12)" }}>
+                  <Play size={32} className="text-white ml-1.5" fill="currentColor" />
+                </span>
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Featured</p>
+                  <p className="text-xl md:text-2xl font-semibold mt-1">Inside an Ignite Academy Class</p>
+                </div>
+                <span className="px-3 py-1.5 rounded-full text-xs bg-black/60 border border-white/10">HD • 4 min</span>
+              </div>
+            </button>
+          </Reveal>
+
+          {/* Demo class cards */}
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {demoClasses.map((d, i) => (
+              <Reveal key={d.title} delay={i * 80}>
+                <VideoCard data={d} onPlay={() => openVideo(d.source)} />
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <LikeWhatYouSaw />
+          </Reveal>
+        </div>
+      </section>
+
       {/* SECTION 1 — built for serious students */}
       <section className="relative py-28 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
