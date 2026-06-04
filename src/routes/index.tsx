@@ -58,11 +58,30 @@ const subjects = [
   { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Support with diagrams, analysis, evaluation and writing stronger exam answers." },
 ];
 
-const teachers = [
-  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg },
-  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg },
+const teachers: Array<{
+  name: string; exp: string; subject: string; levels: string; focus: string;
+  photo: string; intro: VideoSource;
+}> = [
+  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg, intro: { title: "Sir Fahad — Introduction" } },
+  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg, intro: { title: "Sir Yasir — Introduction" } },
+  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg, intro: { title: "Sir Raheel — Introduction" } },
 ];
+
+// Demo class videos — replace `url` with real YouTube IDs, Vimeo IDs or MP4 URLs
+const demoClasses: VideoCardData[] = [
+  { title: "Demand & Supply — Drawing Diagrams That Score", subject: "Economics", teacher: "Sir Mubashir", duration: "12:40", source: { title: "Economics Demo Class — Sir Mubashir" } },
+  { title: "Kinematics — Solving Motion Numericals Step by Step", subject: "Physics", teacher: "Sir Haroon", duration: "15:10", source: { title: "Physics Demo Class — Sir Haroon" } },
+  { title: "Pseudocode & Logic — Walking Through a Past Paper Question", subject: "Computer Science", teacher: "Sir Fahad", duration: "10:25", source: { title: "Computer Science Demo Class — Sir Fahad" } },
+];
+
+const successStories: VideoCardData[] = [
+  { title: "From a C to an A* in O Level Physics", subject: "Student Story", teacher: "Ahmed, O Level", duration: "1:48", source: { title: "Ahmed's Physics Story" } },
+  { title: "How My Daughter Stopped Fearing Maths", subject: "Parent Review", teacher: "Mrs. Khan", duration: "2:10", source: { title: "Parent Review — Mrs. Khan" } },
+  { title: "A Level Economics — Answer Writing Changed Everything", subject: "Student Story", teacher: "Hira, A Level", duration: "2:32", source: { title: "Hira's Economics Story" } },
+  { title: "Result Day — A* in Accounting", subject: "Result", teacher: "Bilal, O Level", duration: "0:58", source: { title: "Result Celebration — Bilal" } },
+];
+
+const founderVideo: VideoSource = { title: "Why I Started Ignite Academy — Sir Mubashir" };
 
 const whyCards = [
   { icon: GraduationCap, title: "Experienced Teachers", copy: "Subject specialists who have taught O and A Level students for years." },
