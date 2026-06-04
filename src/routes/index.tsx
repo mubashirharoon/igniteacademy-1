@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Atom, FlaskConical, Sigma, Cpu, Calculator, Briefcase, LineChart,
   Brain, Target, FileText, GraduationCap, Globe, Users, Heart, BookOpen,
-  MessageCircle, Sparkles, Quote, ChevronRight,
+  MessageCircle, Sparkles, Quote, ChevronRight, Play, CalendarCheck,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { IgniteCore } from "@/components/IgniteCore";
 import { Particles } from "@/components/Particles";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { VideoModal, type VideoSource } from "@/components/VideoModal";
+import { VideoCard, type VideoCardData } from "@/components/VideoCard";
 
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
@@ -55,11 +58,30 @@ const subjects = [
   { name: "Economics", icon: LineChart, level: "O Level / A Level", hover: "Support with diagrams, analysis, evaluation and writing stronger exam answers." },
 ];
 
-const teachers = [
-  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg },
-  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg },
+const teachers: Array<{
+  name: string; exp: string; subject: string; levels: string; focus: string;
+  photo: string; intro: VideoSource;
+}> = [
+  { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg, intro: { title: "Sir Fahad — Introduction" } },
+  { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg, intro: { title: "Sir Yasir — Introduction" } },
+  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg, intro: { title: "Sir Raheel — Introduction" } },
 ];
+
+// Demo class videos — replace `url` with real YouTube IDs, Vimeo IDs or MP4 URLs
+const demoClasses: VideoCardData[] = [
+  { title: "Demand & Supply — Drawing Diagrams That Score", subject: "Economics", teacher: "Sir Mubashir", duration: "12:40", source: { title: "Economics Demo Class — Sir Mubashir" } },
+  { title: "Kinematics — Solving Motion Numericals Step by Step", subject: "Physics", teacher: "Sir Haroon", duration: "15:10", source: { title: "Physics Demo Class — Sir Haroon" } },
+  { title: "Pseudocode & Logic — Walking Through a Past Paper Question", subject: "Computer Science", teacher: "Sir Fahad", duration: "10:25", source: { title: "Computer Science Demo Class — Sir Fahad" } },
+];
+
+const successStories: VideoCardData[] = [
+  { title: "From a C to an A* in O Level Physics", subject: "Student Story", teacher: "Ahmed, O Level", duration: "1:48", source: { title: "Ahmed's Physics Story" } },
+  { title: "How My Daughter Stopped Fearing Maths", subject: "Parent Review", teacher: "Mrs. Khan", duration: "2:10", source: { title: "Parent Review — Mrs. Khan" } },
+  { title: "A Level Economics — Answer Writing Changed Everything", subject: "Student Story", teacher: "Hira, A Level", duration: "2:32", source: { title: "Hira's Economics Story" } },
+  { title: "Result Day — A* in Accounting", subject: "Result", teacher: "Bilal, O Level", duration: "0:58", source: { title: "Result Celebration — Bilal" } },
+];
+
+const founderVideo: VideoSource = { title: "Why I Started Ignite Academy — Sir Mubashir" };
 
 const whyCards = [
   { icon: GraduationCap, title: "Experienced Teachers", copy: "Subject specialists who have taught O and A Level students for years." },
@@ -77,9 +99,41 @@ const testimonials = [
   { quote: "Case study questions became easier once I learned how to connect the answer with the business situation.", who: "O Level Business Student" },
 ];
 
+function LikeWhatYouSaw() {
+  return (
+    <div className="mt-10 glass rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
+      <div className="absolute inset-0 grid-paper opacity-30" />
+      <div className="relative">
+        <h3 className="text-2xl md:text-3xl font-semibold">Like what you saw?</h3>
+        <p className="mt-2 text-sm text-[#B8B8B8]">Talk to us directly — no pressure, no sales pitch.</p>
+        <div className="mt-6 flex flex-wrap gap-3 justify-center">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white"
+             style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
+            <MessageCircle size={16} /> WhatsApp Us
+          </a>
+          <a href="#contact"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/60">
+            <CalendarCheck size={16} /> Book Free Consultation
+          </a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
+            <Users size={16} /> Join Upcoming Batch
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
+  const [activeVideo, setActiveVideo] = useState<VideoSource | null>(null);
+  const openVideo = (v: VideoSource) => setActiveVideo(v);
+  const closeVideo = () => setActiveVideo(null);
+
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
+      <VideoModal open={!!activeVideo} onClose={closeVideo} source={activeVideo ?? {}} />
       <Toaster theme="dark" position="top-right" />
       <Navbar />
       <WhatsAppFab />
@@ -136,6 +190,58 @@ function Home() {
               <div className="text-base font-semibold">Defence Phase 6</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* VIDEO — EXPERIENCE A REAL CLASS */}
+      <section id="watch" className="relative py-28 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Watch</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Experience a Real Ignite Academy Class.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Don't just read about our teaching. Watch it.</p>
+            </div>
+          </Reveal>
+
+          {/* Featured player */}
+          <Reveal>
+            <button
+              type="button"
+              onClick={() => openVideo({ title: "Inside an Ignite Academy Class — Featured Walkthrough" })}
+              className="group relative block w-full aspect-video rounded-3xl overflow-hidden glass ignite-border-glow text-left"
+              aria-label="Play featured class video"
+            >
+              <div className="absolute inset-0 grid-paper opacity-40" />
+              <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full blur-3xl opacity-30" style={{ background: "#E85D10" }} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="relative w-24 h-24 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ background: "var(--grad-ignite)", boxShadow: "0 20px 60px -10px rgba(232,93,16,0.7), 0 0 0 10px rgba(232,93,16,0.12)" }}>
+                  <Play size={32} className="text-white ml-1.5" fill="currentColor" />
+                </span>
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Featured</p>
+                  <p className="text-xl md:text-2xl font-semibold mt-1">Inside an Ignite Academy Class</p>
+                </div>
+                <span className="px-3 py-1.5 rounded-full text-xs bg-black/60 border border-white/10">HD • 4 min</span>
+              </div>
+            </button>
+          </Reveal>
+
+          {/* Demo class cards */}
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {demoClasses.map((d, i) => (
+              <Reveal key={d.title} delay={i * 80}>
+                <VideoCard data={d} onPlay={() => openVideo(d.source)} />
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <LikeWhatYouSaw />
+          </Reveal>
         </div>
       </section>
 
@@ -249,10 +355,16 @@ function Home() {
                     His classes focus on clear explanation, regular practice and helping students
                     handle difficult exam questions step by step.
                   </p>
-                  <div className="mt-6 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2 items-center">
                     {["Online", "Physical", "30+ Years", "O/A Level"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs border border-white/10 text-[#B8B8B8]">{t}</span>
                     ))}
+                    <button
+                      onClick={() => openVideo({ title: "Sir Haroon — Introduction" })}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-white border border-[#E85D10]/50 hover:bg-[#E85D10]/10 transition"
+                    >
+                      <Play size={12} fill="currentColor" /> Watch Introduction
+                    </button>
                   </div>
                 </div>
               </div>
@@ -282,10 +394,16 @@ function Home() {
                     Sir Mubashir is the founder of Ignite Academy and teaches O & A Level Economics.
                     He helps students improve diagrams, analysis, evaluation and answer structure.
                   </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-wrap gap-2 items-center">
                     {["Answer Writing", "Examiner Technique", "Online", "Physical"].map((t) => (
                       <span key={t} className="px-3 py-1 rounded-full text-xs border border-white/10 text-[#B8B8B8]">{t}</span>
                     ))}
+                    <button
+                      onClick={() => openVideo(founderVideo)}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-white border border-[#E85D10]/50 hover:bg-[#E85D10]/10 transition"
+                    >
+                      <Play size={12} fill="currentColor" /> Watch Introduction
+                    </button>
                   </div>
                 </div>
               </div>
@@ -310,14 +428,80 @@ function Home() {
                   </div>
                   <p className="text-xs text-[#888] uppercase tracking-wider">{t.levels}</p>
                   <p className="mt-3 text-sm text-[#B8B8B8] leading-relaxed">{t.focus}</p>
-                  <div className="mt-5 flex gap-2">
+                  <div className="mt-5 flex flex-wrap items-center gap-2">
                     <span className="px-2.5 py-1 rounded-full text-[10px] border border-white/10 text-[#B8B8B8]">Online</span>
                     <span className="px-2.5 py-1 rounded-full text-[10px] border border-white/10 text-[#B8B8B8]">Physical</span>
+                    <button
+                      onClick={() => openVideo(t.intro)}
+                      className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-white border border-[#E85D10]/40 hover:bg-[#E85D10]/10 transition"
+                    >
+                      <Play size={12} fill="currentColor" /> Watch Introduction
+                    </button>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* MEET THE FOUNDER */}
+      <section id="founder" className="relative py-28 px-6 lg:px-10">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <button
+              type="button"
+              onClick={() => openVideo(founderVideo)}
+              className="group relative block w-full aspect-video rounded-3xl overflow-hidden glass ignite-border-glow text-left"
+              aria-label="Play founder video"
+            >
+              <img
+                src={mubashirImg}
+                alt="Sir Mubashir — Founder of Ignite Academy"
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0"
+                style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.7))" }} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="relative w-20 h-20 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110"
+                  style={{ background: "var(--grad-ignite)", boxShadow: "0 16px 50px -10px rgba(232,93,16,0.75), 0 0 0 8px rgba(232,93,16,0.15)" }}>
+                  <Play size={26} className="text-white ml-1" fill="currentColor" />
+                </span>
+              </div>
+              <div className="absolute bottom-5 left-5 right-5">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Founder Message</p>
+                <p className="mt-1 text-lg font-semibold">Sir Mubashir — Founder, Ignite Academy</p>
+              </div>
+            </button>
+          </Reveal>
+          <Reveal delay={120}>
+            <div>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Meet The Founder</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Why I Started Ignite Academy.</h2>
+              <p className="mt-5 text-[#B8B8B8] leading-relaxed">
+                I started Ignite Academy after years of teaching O and A Level Economics and seeing the same gap repeat —
+                students who knew the content but couldn't structure exam answers the way Cambridge wants. We built this
+                academy around three things: clear concept teaching, real exam technique, and consistent past paper practice.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-[#B8B8B8]">
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> 5+ years teaching Cambridge Economics</li>
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> Trained students who improved from C/D grades to A/A*</li>
+                <li className="flex gap-3"><span className="text-[#E85D10]">—</span> Believes small batches and direct feedback beat large lectures</li>
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="#contact"
+                   className="magnetic-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white"
+                   style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
+                  <CalendarCheck size={16} /> Book a Free Academic Consultation
+                </a>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+                   className="magnetic-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
+                  <MessageCircle size={16} /> Message Founder
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -449,16 +633,30 @@ function Home() {
         </div>
       </section>
 
-      {/* SECTION 8 — TESTIMONIALS */}
-      <section className="relative py-28 px-6 lg:px-10">
+      {/* SECTION 8 — STUDENT SUCCESS STORIES (VIDEO) */}
+      <section id="stories" className="relative py-28 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Voices</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">What Students and Parents Notice.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Student Success Stories.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Real students. Real parents. Real result days.</p>
             </div>
           </Reveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          {/* Video carousel — horizontal scroll on mobile, grid on desktop */}
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+            {successStories.map((s, i) => (
+              <div key={s.title} className="min-w-[280px] md:min-w-0 snap-start">
+                <Reveal delay={i * 70}>
+                  <VideoCard data={s} onPlay={() => openVideo(s.source)} cta="Watch Story" />
+                </Reveal>
+              </div>
+            ))}
+          </div>
+
+          {/* Supporting written quotes */}
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {testimonials.map((t, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 h-full hover-lift">
@@ -469,11 +667,17 @@ function Home() {
               </Reveal>
             ))}
           </div>
+
           <p className="mt-10 text-center text-xs text-[#666] max-w-xl mx-auto">
             Testimonials reflect individual student experiences. Results depend on effort and consistency — we do not guarantee specific grades.
           </p>
+
+          <Reveal>
+            <LikeWhatYouSaw />
+          </Reveal>
         </div>
       </section>
+
 
       {/* SECTION 9 — CONSULT FORM (Jotform Embed) */}
       <section id="contact" className="relative py-28 px-6 lg:px-10" style={{ background: "#111111" }}>
