@@ -633,16 +633,30 @@ function Home() {
         </div>
       </section>
 
-      {/* SECTION 8 — TESTIMONIALS */}
-      <section className="relative py-28 px-6 lg:px-10">
+      {/* SECTION 8 — STUDENT SUCCESS STORIES (VIDEO) */}
+      <section id="stories" className="relative py-28 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Voices</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">What Students and Parents Notice.</h2>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Student Success Stories.</h2>
+              <p className="mt-4 text-[#B8B8B8]">Real students. Real parents. Real result days.</p>
             </div>
           </Reveal>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          {/* Video carousel — horizontal scroll on mobile, grid on desktop */}
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+            {successStories.map((s, i) => (
+              <div key={s.title} className="min-w-[280px] md:min-w-0 snap-start">
+                <Reveal delay={i * 70}>
+                  <VideoCard data={s} onPlay={() => openVideo(s.source)} cta="Watch Story" />
+                </Reveal>
+              </div>
+            ))}
+          </div>
+
+          {/* Supporting written quotes */}
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {testimonials.map((t, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 h-full hover-lift">
@@ -653,11 +667,17 @@ function Home() {
               </Reveal>
             ))}
           </div>
+
           <p className="mt-10 text-center text-xs text-[#666] max-w-xl mx-auto">
             Testimonials reflect individual student experiences. Results depend on effort and consistency — we do not guarantee specific grades.
           </p>
+
+          <Reveal>
+            <LikeWhatYouSaw />
+          </Reveal>
         </div>
       </section>
+
 
       {/* SECTION 9 — CONSULT FORM (Jotform Embed) */}
       <section id="contact" className="relative py-28 px-6 lg:px-10" style={{ background: "#111111" }}>
