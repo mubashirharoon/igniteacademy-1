@@ -1,14 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   Atom, FlaskConical, Sigma, Cpu, Calculator, Briefcase, LineChart,
   Brain, Target, FileText, GraduationCap, Globe, Users, Heart, BookOpen,
-  MessageCircle, Sparkles, Quote, ChevronRight,
+  MessageCircle, Sparkles, Quote, ChevronRight, Play, CalendarCheck,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { IgniteCore } from "@/components/IgniteCore";
 import { Particles } from "@/components/Particles";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
+import { VideoModal, type VideoSource } from "@/components/VideoModal";
+import { VideoCard, type VideoCardData } from "@/components/VideoCard";
 
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
