@@ -99,9 +99,41 @@ const testimonials = [
   { quote: "Case study questions became easier once I learned how to connect the answer with the business situation.", who: "O Level Business Student" },
 ];
 
+function LikeWhatYouSaw() {
+  return (
+    <div className="mt-10 glass rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
+      <div className="absolute inset-0 grid-paper opacity-30" />
+      <div className="relative">
+        <h3 className="text-2xl md:text-3xl font-semibold">Like what you saw?</h3>
+        <p className="mt-2 text-sm text-[#B8B8B8]">Talk to us directly — no pressure, no sales pitch.</p>
+        <div className="mt-6 flex flex-wrap gap-3 justify-center">
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white"
+             style={{ background: "var(--grad-ignite)", boxShadow: "var(--shadow-glow)" }}>
+            <MessageCircle size={16} /> WhatsApp Us
+          </a>
+          <a href="#contact"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white glass hover:border-[#E85D10]/60">
+            <CalendarCheck size={16} /> Book Free Consultation
+          </a>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer"
+             className="magnetic-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white border border-white/15 hover:border-[#E85D10]/60 hover:bg-white/5 transition">
+            <Users size={16} /> Join Upcoming Batch
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
+  const [activeVideo, setActiveVideo] = useState<VideoSource | null>(null);
+  const openVideo = (v: VideoSource) => setActiveVideo(v);
+  const closeVideo = () => setActiveVideo(null);
+
   return (
     <div className="min-h-screen text-white overflow-x-hidden">
+      <VideoModal open={!!activeVideo} onClose={closeVideo} source={activeVideo ?? {}} />
       <Toaster theme="dark" position="top-right" />
       <Navbar />
       <WhatsAppFab />
