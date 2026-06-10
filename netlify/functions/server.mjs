@@ -1,18 +1,58 @@
-[build]
-  command = "npm run build"
-  publish = "dist/client"
+import server from "../../dist/server/server.js";
 
-[functions]
-  # SOURCE directory for Netlify function files (NOT the build output).
-  # The adapter at netlify/functions/server.mjs wraps the SSR bundle.
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
+function buildRequest(event) {
+  const protocol = event.headers?.["x-forwarded-proto"] ?? "https";
+  const host =
+    event.headers?.["x-forwarded-host"] ??
+    event.headers?.["host"] ??
+    "localhost";
 
-# Route all requests to the SSR function.
-# Static files in dist/client are served directly (Netlify does this automatically
-# for the publish directory before evaluating redirects).
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
-  force = false
+  let url = `${protocol}://${host}${event.path}`;
+
+  if (event.multiValueQueryStringParameters) {
+    const params = new URLSearchParams();
+    for (const [key, values] of Object.entries(
+      event.multiValueQueryStringParameters
+    )) {
+      for (const value of values ?? []) {
+        params.append(key, value);
+      }
+    }
+    const qs = params.toString();
+    if (qs) url += `?${qs}`;
+  }
+
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(event.headers ?? {})) {
+    if (value != null) headers.set(key, value);
+  }
+
+  const init = { method: event.httpMethod, headers };
+  if (event.body) {
+    init.body = event.isBase64Encoded
+      ? Buffer.from(event.body, "base64")
+      : event.body;
+  }
+
+  return new Request(url, init);
+}
+
+export const handler = async (event) => {
+  const request = buildRequest(event);
+  const response = await server.fetch(request, {}, {});
+
+  const arrayBuffer = await response.arrayBuffer();
+  const body = Buffer.from(arrayBuffer).toString("base64");
+
+  const headers = {};
+  for (const [key, value] of response.headers.entries()) {
+    headers[key] = value;
+  }
+
+  return {
+    statusCode: response.status,
+    headers,
+    body,
+    isBase64Encoded: true,
+  };
+};
