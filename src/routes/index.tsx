@@ -68,14 +68,18 @@ const teachers: Array<{
   { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg, intro: { title: "Sir Raheel — Introduction" } },
 ];
 
-// Demo class videos — replace `url` with real YouTube IDs, Vimeo IDs or MP4 URLs
+// ➕ To add a new video: copy any one of the four lines below and paste the
+//    YouTube link, youtu.be link, full <iframe> embed code, Vimeo link, or MP4 URL
+//    into `embed:`. The helper auto-detects the format — no IDs to extract.
 const demoClasses: VideoCardData[] = [
-  { title: "Polygons Explained Simply", subject: "O Level Mathematics", teacher: "Sir Haroon", source: { kind: "youtube", url: "opa_4vXQkbA", title: "O Level Mathematics | Polygons Explained Simply | Sir Haroon" } },
-  { title: "Indices and Surds Explained", subject: "O Level Mathematics", teacher: "Sir Haroon", source: { kind: "youtube", url: "ukE2yM76JiA", title: "Indices and Surds Explained | O Level Mathematics | Sir Haroon" } },
-  { title: "Simple Interest and Compound Interest Explained", subject: "O Level Mathematics", teacher: "Sir Haroon", source: { kind: "youtube", url: "KdJu2nwh6EM", title: "Simple Interest and Compound Interest Explained | O Level Mathematics | Sir Haroon" } },
-  { title: "Demand & Supply — Drawing Diagrams That Score", subject: "Economics", teacher: "Sir Mubashir", duration: "12:40", source: { title: "Economics Demo Class — Sir Mubashir" } },
-  { title: "Pseudocode & Logic — Walking Through a Past Paper Question", subject: "Computer Science", teacher: "Sir Fahad", duration: "10:25", source: { title: "Computer Science Demo Class — Sir Fahad" } },
+  videoCard({ title: "Polygons Explained Simply",                        subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=opa_4vXQkbA", playerTitle: "O Level Mathematics | Polygons Explained Simply | Sir Haroon" }),
+  videoCard({ title: "Indices and Surds Explained",                      subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=ukE2yM76JiA", playerTitle: "Indices and Surds Explained | O Level Mathematics | Sir Haroon" }),
+  videoCard({ title: "Simple Interest and Compound Interest Explained",  subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=KdJu2nwh6EM", playerTitle: "Simple Interest and Compound Interest Explained | O Level Mathematics | Sir Haroon" }),
+  videoCard({ title: "Demand & Supply — Drawing Diagrams That Score",    subject: "Economics",           teacher: "Sir Mubashir", duration: "12:40", embed: "" }),
+  videoCard({ title: "Pseudocode & Logic — Walking Through a Past Paper Question", subject: "Computer Science", teacher: "Sir Fahad", duration: "10:25", embed: "" }),
 ];
+// Keep `video(...)` available for one-off embeds elsewhere on the page.
+void video;
 
 const successStories: VideoCardData[] = [
   { title: "From a C to an A* in O Level Physics", subject: "Student Story", teacher: "Ahmed, O Level", duration: "1:48", source: { title: "Ahmed's Physics Story" } },
