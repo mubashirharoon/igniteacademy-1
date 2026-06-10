@@ -12,6 +12,7 @@ import { Reveal } from "@/components/Reveal";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { VideoModal, type VideoSource } from "@/components/VideoModal";
 import { VideoCard, type VideoCardData } from "@/components/VideoCard";
+import { video, videoCard } from "@/lib/video";
 
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
