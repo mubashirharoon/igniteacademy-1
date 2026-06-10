@@ -70,7 +70,7 @@ const teachers: Array<{
 // Demo class videos — replace `url` with real YouTube IDs, Vimeo IDs or MP4 URLs
 const demoClasses: VideoCardData[] = [
   { title: "Demand & Supply — Drawing Diagrams That Score", subject: "Economics", teacher: "Sir Mubashir", duration: "12:40", source: { title: "Economics Demo Class — Sir Mubashir" } },
-  { title: "Kinematics — Solving Motion Numericals Step by Step", subject: "Physics", teacher: "Sir Haroon", duration: "15:10", source: { title: "Physics Demo Class — Sir Haroon" } },
+  { title: "Simple Interest and Compound Interest Explained", subject: "O Level Mathematics", teacher: "Sir Haroon", source: { kind: "youtube", url: "KdJu2nwh6EM", title: "Simple Interest and Compound Interest Explained | O Level Mathematics | Sir Haroon" } },
   { title: "Pseudocode & Logic — Walking Through a Past Paper Question", subject: "Computer Science", teacher: "Sir Fahad", duration: "10:25", source: { title: "Computer Science Demo Class — Sir Fahad" } },
 ];
 
