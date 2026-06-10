@@ -32,7 +32,7 @@ export function video(input: string, title?: string): VideoSource {
   // Vimeo
   if (/vimeo\.com|player\.vimeo\.com/.test(url)) {
     const id = url.match(/(?:vimeo\.com|player\.vimeo\.com)\/(?:video\/)?(\d+)/)?.[1];
-    return { kind: "youtube" /* unused */, ...({ kind: "vimeo" } as const), url: id ?? url, title };
+    return { kind: "vimeo", url: id ?? url, title };
   }
 
   // YouTube — extract the 11-char video id from any common URL shape
