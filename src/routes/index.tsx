@@ -17,7 +17,7 @@ import { video, videoCard } from "@/lib/video";
 import { Toaster } from "@/components/ui/sonner";
 import yasirImg from "@/assets/faculty/yasir.png";
 import fahadImg from "@/assets/faculty/fahad.png";
-import raheelImg from "@/assets/faculty/raheel.png";
+
 import mubashirImg from "@/assets/faculty/mubashir.png";
 import haroonImg from "@/assets/faculty/haroon.png";
 
