@@ -32,17 +32,65 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
     ],
     links: [{ rel: "canonical", href: "/" }],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        name: "Ignite Academy",
-        description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan and abroad.",
-        telephone: "+92 320 1719494",
-        areaServed: ["Pakistan", "International"],
-      }),
-    }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          name: "Ignite Academy",
+          description: "O Level, IGCSE, GCE and A Level tuition for students in Pakistan and abroad.",
+          telephone: "+92 320 1719494",
+          areaServed: ["Pakistan", "International"],
+          url: "https://igniteacademy-1.lovable.app/",
+          employee: [
+            {
+              "@type": "Person",
+              name: "Sir Haroon",
+              jobTitle: "Senior Faculty — Physics, Chemistry & Mathematics",
+              description: "Senior faculty at Ignite Academy with 30+ years teaching Physics, Chemistry and Mathematics for O Level, IGCSE, GCE and A Level students.",
+              worksFor: { "@type": "EducationalOrganization", name: "Ignite Academy" },
+            },
+            {
+              "@type": "Person",
+              name: "Sir Mubashir",
+              jobTitle: "Founder & Economics Specialist",
+              description: "Founder of Ignite Academy. Teaches O & A Level Economics with focus on diagrams, analysis, evaluation and answer structure.",
+              worksFor: { "@type": "EducationalOrganization", name: "Ignite Academy" },
+            },
+            {
+              "@type": "Person",
+              name: "Sir Fahad",
+              jobTitle: "Computer Science Teacher (O & A Level)",
+              description: "Teaches O and A Level Computer Science with focus on theory, logic, programming concepts and exam-style practice.",
+              worksFor: { "@type": "EducationalOrganization", name: "Ignite Academy" },
+            },
+            {
+              "@type": "Person",
+              name: "Sir Yasir",
+              jobTitle: "Accounting Teacher (O & A Level)",
+              description: "Teaches O and A Level Accounting through step-by-step practice, formats, calculations and past paper questions.",
+              worksFor: { "@type": "EducationalOrganization", name: "Ignite Academy" },
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Ignite Academy Faculty",
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, item: { "@type": "Person", name: "Sir Haroon", jobTitle: "Senior Faculty — Physics, Chemistry & Mathematics" } },
+            { "@type": "ListItem", position: 2, item: { "@type": "Person", name: "Sir Mubashir", jobTitle: "Founder & Economics Specialist" } },
+            { "@type": "ListItem", position: 3, item: { "@type": "Person", name: "Sir Fahad", jobTitle: "Computer Science Teacher" } },
+            { "@type": "ListItem", position: 4, item: { "@type": "Person", name: "Sir Yasir", jobTitle: "Accounting Teacher" } },
+          ],
+        }),
+      },
+    ],
   }),
   component: Home,
 });
@@ -322,8 +370,8 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Faculty</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet Our Teachers.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Subject specialists teaching O Level, IGCSE, GCE and A Level students.</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet the Ignite Academy Faculty</h2>
+              <p className="mt-4 text-[#B8B8B8]">Sir Haroon, Sir Mubashir, Sir Fahad and Sir Yasir — subject specialists teaching O Level, IGCSE, GCE and A Level students.</p>
             </div>
           </Reveal>
 
