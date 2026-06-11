@@ -65,7 +65,7 @@ const teachers: Array<{
 }> = [
   { name: "Sir Fahad", exp: "4 Years", subject: "Computer Science", levels: "O Level / A Level", focus: "Sir Fahad teaches Computer Science for O and A Level students with a focus on theory, logic, programming concepts and exam-style practice.", photo: fahadImg, intro: { title: "Sir Fahad — Introduction" } },
   { name: "Sir Yasir", exp: "5 Years", subject: "Accounting", levels: "O Level / A Level", focus: "Sir Yasir teaches Accounting through step-by-step practice, formats, calculations and past paper questions.", photo: yasirImg, intro: { title: "Sir Yasir — Introduction" } },
-  { name: "Sir Raheel", exp: "1 Year", subject: "Business Studies", levels: "O Level / A Level", focus: "Sir Raheel teaches Business Studies with a focus on case studies, application and structured answers.", photo: raheelImg, intro: { title: "Sir Raheel — Introduction" } },
+  
 ];
 
 // ➕ To add a new video: copy any one of the four lines below and paste the
