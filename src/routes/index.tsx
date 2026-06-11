@@ -370,8 +370,8 @@ function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="text-xs uppercase tracking-[0.2em] text-[#E85D10]">Faculty</span>
-              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet Our Teachers.</h2>
-              <p className="mt-4 text-[#B8B8B8]">Subject specialists teaching O Level, IGCSE, GCE and A Level students.</p>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold">Meet the Ignite Academy Faculty</h2>
+              <p className="mt-4 text-[#B8B8B8]">Sir Haroon, Sir Mubashir, Sir Fahad and Sir Yasir — subject specialists teaching O Level, IGCSE, GCE and A Level students.</p>
             </div>
           </Reveal>
 
