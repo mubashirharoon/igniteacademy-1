@@ -4,6 +4,7 @@ import {
   Atom, FlaskConical, Sigma, Cpu, Calculator, Briefcase, LineChart,
   Brain, Target, FileText, GraduationCap, Globe, Users, Heart, BookOpen,
   MessageCircle, Sparkles, Quote, ChevronRight, Play, CalendarCheck,
+  ExternalLink,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { IgniteCore } from "@/components/IgniteCore";
@@ -422,6 +423,14 @@ function Home() {
                     >
                       <Play size={12} fill="currentColor" /> Watch Introduction
                     </button>
+                    <a
+                      href="https://www.youtube.com/@sirharoon3141"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-white border border-white/15 hover:border-[#E85D10]/50 hover:bg-white/5 transition"
+                    >
+                      <ExternalLink size={12} /> YouTube Channel
+                    </a>
                   </div>
                 </div>
               </div>
