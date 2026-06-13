@@ -120,6 +120,7 @@ const teachers: Array<{
 //    YouTube link, youtu.be link, full <iframe> embed code, Vimeo link, or MP4 URL
 //    into `embed:`. The helper auto-detects the format — no IDs to extract.
 const demoClasses: VideoCardData[] = [
+  videoCard({ title: "Motion in a Straight Line Explained",               subject: "O Level Physics",     teacher: "Sir Haroon",   embed: "https://www.youtube.com/embed/bno0lhiQHiU", playerTitle: "Motion in a Straight Line Explained | O Level Physics | Sir Haroon" }),
   videoCard({ title: "Polygons Explained Simply",                        subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=opa_4vXQkbA", playerTitle: "O Level Mathematics | Polygons Explained Simply | Sir Haroon" }),
   videoCard({ title: "Indices and Surds Explained",                      subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=ukE2yM76JiA", playerTitle: "Indices and Surds Explained | O Level Mathematics | Sir Haroon" }),
   videoCard({ title: "Simple Interest and Compound Interest Explained",  subject: "O Level Mathematics", teacher: "Sir Haroon",   embed: "https://www.youtube.com/watch?v=KdJu2nwh6EM", playerTitle: "Simple Interest and Compound Interest Explained | O Level Mathematics | Sir Haroon" }),
