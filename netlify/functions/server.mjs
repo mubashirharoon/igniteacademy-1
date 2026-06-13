@@ -1,82 +1,25 @@
 /**
- * Netlify SSR Adapter for TanStack Start (Cloudflare Workers build)
+ * Netlify SSR Adapter for TanStack Start
  *
- * The vite build produces dist/server/<bundle>.js with a Cloudflare Workers-style
- * default export: { fetch(request, env, ctx): Promise<Response> }
+ * Uses a static import so Netlify's esbuild bundler includes dist/server/server.js
+ * and all its asset chunks in the function package. A dynamic process.cwd()-based
+ * import is invisible to esbuild and leaves the bundle absent at Lambda runtime.
  *
- * Netlify invokes this file as a Node.js serverless function (event, context).
- * This adapter bridges the two.
+ * dist/server/server.js exports: { default: { fetch(request, env, ctx): Promise<Response> } }
  */
 
-import { existsSync, readdirSync } from "fs";
-import { join } from "path";
+import ssrServer from "../../dist/server/server.js";
 
-// --- Bundle discovery ---
-// Netlify sets process.cwd() to the site root (repo root) at function runtime.
-// The build puts the SSR bundle in dist/server/.
-function findServerBundle() {
-  const serverDir = join(process.cwd(), "dist", "server");
-  // Try known filenames in priority order
-  for (const name of ["_worker.js", "index.js", "server.js"]) {
-    const p = join(serverDir, name);
-    if (existsSync(p)) return p;
-  }
-  // Fallback: first .js file in dist/server/
-  try {
-    const files = readdirSync(serverDir).filter((f) => f.endsWith(".js") && !f.endsWith(".map"));
-    if (files.length > 0) return join(serverDir, files[0]);
-  } catch (_) {}
-  return null;
-}
-
-let serverHandler = null;
-
-async function getHandler() {
-  if (serverHandler) return serverHandler;
-
-  const bundlePath = findServerBundle();
-  if (!bundlePath) {
-    throw new Error(
-      `SSR bundle not found. Looked in ${join(process.cwd(), "dist", "server")}. ` +
-        `Make sure the build command ran and produced dist/server/*.js`
-    );
-  }
-
-  console.log(`[SSR] Loading bundle: ${bundlePath}`);
-  const mod = await import(bundlePath);
-
-  // The Cloudflare Workers export shape is: export default { fetch }
-  // Handle both: export default { fetch } and export default function / export { fetch }
-  const candidate = mod.default?.fetch
-    ? mod.default
-    : typeof mod.default === "function"
-    ? { fetch: mod.default }
-    : mod.fetch
-    ? mod
-    : null;
-
-  if (!candidate || typeof candidate.fetch !== "function") {
-    throw new Error(
-      `SSR bundle at ${bundlePath} did not export a { fetch } handler. ` +
-        `Exports: ${Object.keys(mod).join(", ")}`
-    );
-  }
-
-  serverHandler = candidate;
-  return serverHandler;
-}
+// ssrServer is the Cloudflare Workers-style export: { fetch }
+const cfHandler = ssrServer?.default ?? ssrServer;
 
 // --- Netlify function handler ---
-export const handler = async (event, context) => {
-  let handler;
-  try {
-    handler = await getHandler();
-  } catch (err) {
-    console.error("[SSR] Failed to load server bundle:", err);
+export const handler = async (event, _context) => {
+  if (!cfHandler || typeof cfHandler.fetch !== "function") {
     return {
       statusCode: 500,
       headers: { "content-type": "text/html; charset=utf-8" },
-      body: `<h1>Server Error</h1><pre>${String(err.message)}</pre>`,
+      body: "<h1>Server Error</h1><pre>SSR bundle did not export a fetch handler.</pre>",
     };
   }
 
@@ -85,8 +28,7 @@ export const handler = async (event, context) => {
     event.headers["x-forwarded-proto"] ||
     event.headers["X-Forwarded-Proto"] ||
     "https";
-  const host =
-    event.headers["host"] || event.headers["Host"] || "localhost";
+  const host = event.headers["host"] || event.headers["Host"] || "localhost";
   const qs = event.rawQuery ? "?" + event.rawQuery : "";
   const url = `${protocol}://${host}${event.path}${qs}`;
 
@@ -110,7 +52,7 @@ export const handler = async (event, context) => {
   let response;
   try {
     const ctx = { waitUntil: () => {}, passThroughOnException: () => {} };
-    response = await handler.fetch(request, {}, ctx);
+    response = await cfHandler.fetch(request, {}, ctx);
   } catch (err) {
     console.error("[SSR] Handler threw:", err);
     return {
