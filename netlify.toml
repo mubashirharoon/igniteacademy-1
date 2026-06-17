@@ -7,6 +7,8 @@
   # The adapter at netlify/functions/server.mjs wraps the SSR bundle.
   directory = "netlify/functions"
   node_bundler = "esbuild"
+  # Ensure the runtime can read the SSR bundle files via dynamic import.
+  included_files = ["dist/server/**"]
 
 # Route all requests to the SSR function.
 # Static files in dist/client are served directly (Netlify does this automatically
