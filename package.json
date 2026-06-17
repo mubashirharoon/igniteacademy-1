@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node scripts/validate-deployment.mjs",
     "build:dev": "vite build --mode development",
+    "validate:deploy": "node scripts/validate-deployment.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
