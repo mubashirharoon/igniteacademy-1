@@ -16,14 +16,16 @@ import { join } from "path";
 // The build puts the SSR bundle in dist/server/.
 function findServerBundle() {
   const serverDir = join(process.cwd(), "dist", "server");
-  // Try known filenames in priority order
-  for (const name of ["_worker.js", "index.js", "server.js"]) {
+  // Try known filenames in priority order (Nitro emits .mjs)
+  for (const name of ["index.mjs", "_worker.js", "index.js", "server.js", "server.mjs"]) {
     const p = join(serverDir, name);
     if (existsSync(p)) return p;
   }
-  // Fallback: first .js file in dist/server/
+  // Fallback: first top-level .mjs/.js entry in dist/server/
   try {
-    const files = readdirSync(serverDir).filter((f) => f.endsWith(".js") && !f.endsWith(".map"));
+    const files = readdirSync(serverDir).filter(
+      (f) => (f.endsWith(".mjs") || f.endsWith(".js")) && !f.endsWith(".map") && !f.startsWith("_")
+    );
     if (files.length > 0) return join(serverDir, files[0]);
   } catch (_) {}
   return null;
